@@ -1,5 +1,6 @@
 # Ex.08 Design of Interactive Image Gallery
-## Date:
+## Date: 26.12.2025
+## Reference no: 25002753
 
 ## AIM:
 To design a web application for an inteactive image gallery with minimum five images.
@@ -25,8 +26,95 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+gallery.html
+
+<html> 
+<head> 
+    <title>Interactive Image Gallery</title> 
+<style> 
+         .gallery-container  
+{ 
+            position: relative; 
+            max-width: 600px; 
+            margin: auto; 
+            background: white; 
+            padding: 10px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+         } 
+         .gallery-image  
+{ 
+            width: 100%; 
+            height: 600px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+         } 
+         .caption  
+{ 
+            margin-top: 10px; 
+            font-size: 18px; 
+         } 
+         .gallery-buttons  
+{ 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 15px; 
+         } 
+         button  
+{ 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px; 
+            background-color: #007BFF; 
+            color: white; 
+            transition: 0.3s; 
+         } 
+     </style>
+     </head> 
+<body> 
+<div class="gallery-container"> 
+<img id="galleryImage" class="gallery-image" src="image1.jpg"> 
+<div id="caption" class="caption">Caption for Image 1</div> 
+<div class="gallery-buttons"> 
+<button onclick="prevImage()">Previous</button> 
+<button onclick="nextImage()">Next</button> 
+</div> 
+</div> 
+<script> 
+const images = [ 
+{ src: "image1.jpeg", caption: "Caption for Image 1" }, 
+{ src: "image2.jpeg", caption: "Caption for Image 2" }, 
+{ src: "image3.jpeg", caption: "Caption for Image 3" }, 
+{ src: "image4.jpeg", caption: "Caption for Image 4" } 
+]; 
+let currentIndex = 0; 
+function updateGallery( )  
+{ 
+document.getElementById("galleryImage").src = images[currentIndex].src; 
+document.getElementById("caption").textContent = images[currentIndex].caption; 
+} 
+function nextImage( )  
+{ 
+currentIndex = (currentIndex + 1) % images.length; 
+updateGallery( ); 
+} 
+function prevImage( )  
+{ 
+currentIndex = (currentIndex - 1 + images.length) % images.length; 
+updateGallery( ); 
+} 
+</script> 
+</body> 
+</html> 
+```
 
 ## OUTPUT:
+![alt text](014.jpeg)
+![alt text](015.jpeg)
+![alt text](016.jpeg)
+![alt text](017.jpeg)
 
 ## RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
